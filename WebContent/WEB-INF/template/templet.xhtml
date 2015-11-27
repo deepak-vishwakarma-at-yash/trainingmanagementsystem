@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+  <title><ui:insert name="title">Default title</ui:insert></title>
+	<h:outputScript library="js" name="jquery.js" />
+	<h:outputScript library="js" name="jquery-ui.js" />
+	<h:outputScript library="js" name="jqcode.js" />
+	<h:outputStylesheet library="css" name="jquery-ui.css" />
+	<h:outputStylesheet library="css" name="ui.css" />
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			setInterval(check,1000);
+			function check(){
+				$.ajax({
+				      url:"rest/timer/get",
+				      type:'GET',
+				      success:function(data) {
+				         $('#timer').text(data);
+				      }
+				   });
+			}
+		});
+	</script>
+  	
+</h:head>
+
+<body>
+<ui:debug hotkey="x" rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}"/>
+
+
+    <ui:insert name="header">
+    	<ui:include src="/WEB-INF/template/header.xhtml"></ui:include>
+    </ui:insert>
+
+
+<div id="content">
+  <ui:insert name="content">
+    	
+  </ui:insert>
+</div>
+
+
+  <ui:insert name="footer">
+    	<ui:include src="/WEB-INF/template/footer.xhtml"></ui:include>
+  </ui:insert>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Welcome</title>
+	<h:outputScript library="js" name="jquery.js" />
+	<h:outputScript library="js" name="jquery-ui.js" />
+	<h:outputScript library="js" name="jqcode.js" />
+	<h:outputStylesheet library="css" name="jquery-ui.css" />
+	<h:outputStylesheet library="css" name="ui.css" />
+	<script type="text/javascript">
+		$(document).ready(function() {
+			setInterval(check,1000);
+			function check(){
+				$.ajax({
+				      url:"rest/timer/get",
+				      type:'GET',
+				      success:function(data) {
+				         $('#timer').text(data);
+				      }
+				   });
+			}
+		});
+	</script>
+</h:head>
+<h:body>
+	<!-- <div class="login-card">
+		<h3>
+			<center> <h:outputText value="#{userBean.message}"
+				style="color:red;" /> <br />
+			<h:outputText value="#{userBean.greeting}" style="color:red;" />
+			&nbsp; <h:outputText value="#{userBean.user.firstname}"
+				style="color:blue;" /> <br />
+			</center>
+		</h3>
+	</div> -->
+	<div class="login-card">
+		<h1>Log-in</h1>
+		<br />
+		<h:form prependId="false">
+			<center>
+			<table>
+				<div id="spanuser">
+					<tr>
+						<td>User Name</td>
+						<td><h:inputText type="text" id="username"
+								value="#{userBean.username}" required="true"></h:inputText></td>
+						<td><span id="user"></span></td>
+
+					</tr>
+				</div>
+				<div id="spanpassword">
+					<tr>
+						<td>Password</td>
+						<td><h:inputText type="text" id="password"
+								value="#{userBean.password}" required="true"></h:inputText></td>
+						<td><span id="password"></span></td>
+					</tr>
+				</div>
+				<tr>
+					<td><h:selectBooleanCheckbox value="#{userBean.rememberUser}" /></td>
+					<td>Remember Me</td>
+				</tr>
+				<tr>
+					<td colspan="2"><h:commandButton type="submit" value="Login"
+							action="#{userBean.authenticate}" class="login login-submit"
+							id="loginsubmit" style="display: none;" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><h:commandButton type="button"
+							value="Register" id="register" class="login login-submit" /></td>
+				</tr>
+			</table>
+			</center>
+		</h:form>
+	</div>
+	<div id="registerform" style="display: none;" class="login-card">
+		<h:form prependId="false">
+			<center>
+			<table>
+				<div id="spanfname">
+					<tr>
+						<td>First Name:</td>
+						<td><h:inputText id="firstname"
+								value="#{userBean.user.firstname}"></h:inputText></td>
+					</tr>
+				</div>
+				<div id="spanlname">
+					<tr>
+						<td>Last Name:</td>
+						<td><h:inputText id="lastname"
+								value="#{userBean.user.lastname}"></h:inputText></td>
+					</tr>
+				</div>
+				<div id="spancontact">
+					<tr>
+						<td>Contact:</td>
+						<td><h:inputText id="contact"
+								value="#{userBean.user.contact}"
+								validatorMessage="Contact digits are less than 10 or more than 10">
+								<f:validateLength maximum="10" minimum="0"></f:validateLength>
+							</h:inputText></td>
+					</tr>
+				</div>
+				<div id="spanemail">
+					<tr>
+						<td>Email Id:</td>
+						<td><h:inputText id="email" value="#{userBean.user.email}"></h:inputText>
+						</td>
+					</tr>
+				</div>
+				<div id="spandesignation">
+					<tr>
+						<td>Designation:</td>
+						<td><h:selectOneMenu
+								value="#{userBean.user.designation.designation_id}"
+								id="designation">
+								<f:selectItem itemValue="1" itemLabel="Manager" />
+								<f:selectItem itemValue="2" itemLabel="Trainer" />
+								<f:selectItem itemValue="3" itemLabel="Trainee" />
+							</h:selectOneMenu></td>
+					</tr>
+				</div>
+				<div id="spanregusername">
+					<tr>
+						<td>User Name:</td>
+						<td><h:inputText id="regusername"
+								value="#{userBean.user.username}"></h:inputText></td>
+					</tr>
+				</div>
+				<div id="spanregpassword">
+					<tr>
+						<td>Password:</td>
+						<td><h:inputText id="regpassword"
+								value="#{userBean.user.password}"></h:inputText></td>
+					</tr>
+				</div>
+				<tr>
+					<td><h:commandButton type="submit" value="Save"
+							action="#{userBean.register}" class="login login-submit" /></td>
+				</tr>
+			</table>
+			</center>
+		</h:form>
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,51 @@
+2015-11-07 13:00:27 INFO  LoggerProvider:10 - check log
+2015-11-07 13:31:21 INFO  LoggerProvider:17 - SELECT * FROM USER
+2015-11-07 13:37:27 INFO  LoggerProvider:17 - SELECT * FROM USER
+2015-11-07 13:37:27 INFO  LoggerProvider:23 - 1
+2015-11-07 13:47:04 INFO  LoggerProvider:15 - 1
+2015-11-07 13:47:04 INFO  LoggerProvider:16 - Ram
+2015-11-07 13:47:04 INFO  LoggerProvider:17 - Chomani
+2015-11-07 13:47:04 INFO  LoggerProvider:18 - 9098464641
+2015-11-07 13:47:04 INFO  LoggerProvider:19 - ram.chomani@yash.com
+2015-11-07 13:47:04 INFO  LoggerProvider:20 - 3
+2015-11-07 13:47:04 INFO  LoggerProvider:21 - 0
+2015-11-07 13:47:04 INFO  LoggerProvider:22 - 3
+2015-11-07 13:47:04 INFO  LoggerProvider:23 - ram101
+2015-11-07 13:47:04 INFO  LoggerProvider:24 - ram101
+2015-11-07 13:47:04 INFO  LoggerProvider:35 - 1
+2015-11-07 13:47:04 INFO  LoggerProvider:36 - Ram
+2015-11-07 13:47:04 INFO  LoggerProvider:37 - Chomani
+2015-11-07 13:47:04 INFO  LoggerProvider:38 - 9098464641
+2015-11-07 13:47:04 INFO  LoggerProvider:39 - ram.chomani@yash.com
+2015-11-07 13:47:04 INFO  LoggerProvider:40 - 3
+2015-11-07 13:47:04 INFO  LoggerProvider:41 - 0
+2015-11-07 13:47:04 INFO  LoggerProvider:42 - 3
+2015-11-07 13:47:04 INFO  LoggerProvider:43 - ram101
+2015-11-07 13:47:04 INFO  LoggerProvider:44 - ram101
+2015-11-07 15:11:46 INFO  LoggerProvider:15 - 1
+2015-11-07 15:11:46 INFO  LoggerProvider:16 - Ram
+2015-11-07 15:11:46 INFO  LoggerProvider:17 - Chomani
+2015-11-07 15:11:46 INFO  LoggerProvider:18 - 9098464641
+2015-11-07 15:11:46 INFO  LoggerProvider:19 - ram.chomani@yash.com
+2015-11-07 15:11:46 INFO  LoggerProvider:20 - 3
+2015-11-07 15:11:46 INFO  LoggerProvider:21 - 0
+2015-11-07 15:11:46 INFO  LoggerProvider:22 - 3
+2015-11-07 15:11:46 INFO  LoggerProvider:23 - ram101
+2015-11-07 15:11:46 INFO  LoggerProvider:24 - ram101
+2015-11-07 15:11:46 INFO  LoggerProvider:15 - 2
+2015-11-07 15:11:46 INFO  LoggerProvider:16 - kushagra
+2015-11-07 15:11:46 INFO  LoggerProvider:17 - bhargava
+2015-11-07 15:11:46 INFO  LoggerProvider:18 - 9907617218
+2015-11-07 15:11:46 INFO  LoggerProvider:19 - kush.bhargava@yash.com
+2015-11-07 15:11:46 INFO  LoggerProvider:20 - 3
+2015-11-07 15:11:46 INFO  LoggerProvider:21 - 0
+2015-11-07 15:11:46 INFO  LoggerProvider:22 - 3
+2015-11-07 15:11:46 INFO  LoggerProvider:23 - kush101
+2015-11-07 15:11:46 INFO  LoggerProvider:24 - kush101
+2015-11-07 15:24:30 INFO  LoggerProvider:51 - 
+2015-11-07 15:25:31 INFO  LoggerProvider:51 - Success
+2015-11-07 15:26:33 INFO  LoggerProvider:58 - 
+2015-11-07 15:26:48 INFO  LoggerProvider:58 - Success
+2015-11-07 16:23:49 INFO  LoggerProvider:66 - User [user_id=1, firstname=Ram, lastname=Chomani, contact=9098464641, email=ram.chomani@yash.com, designation=TRAINEE, status=BLOCK, role=GUEST, username=ram101, password=ram101]
+2015-11-07 16:24:06 INFO  LoggerProvider:73 - Success
+2015-11-07 16:24:16 INFO  LoggerProvider:78 - Success

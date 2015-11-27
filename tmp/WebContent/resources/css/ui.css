@@ -1,0 +1,184 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
+
+body {
+	background:
+	url(https://dl.dropboxusercontent.com/u/23299152/Wallpapers/wallpaper-22705.jpg)
+	no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Roboto', sans-serif;
+}
+
+.login-card {
+	padding: 40px;
+	width: 40%;
+	background-color: #F7F7F7;
+	margin: 0 auto 10px;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+}
+
+.login-card-header {
+	padding: 40px;
+	width: 94%;
+	background-color: #F7F7F7;
+	margin: 0 auto 10px;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+}
+
+.login-card-timer{
+	margin-left: 75%;
+	padding: 40px;
+	width: 274px;
+	background-color: #F7F7F7;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+}
+
+.login-card h1 {
+	font-weight: 100;
+	text-align: center;
+	font-size: 2.3em;
+}
+
+.login-card-header h3 {
+	font-weight: 100;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+.login-card input[type=submit] {
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.login-card input[type=text], input[type=password] {
+	height: 44px;
+	font-size: 16px;
+	width: 100%;
+	margin-bottom: 10px;
+	-webkit-appearance: none;
+	background: #fff;
+	border: 1px solid #d9d9d9;
+	border-top: 1px solid #c0c0c0;
+	/* border-radius: 2px; */
+	padding: 0 8px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.login-card input[type=text]:hover, input[type=password]:hover {
+	border: 1px solid #b9b9b9;
+	border-top: 1px solid #a0a0a0;
+	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.login {
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	height: 36px;
+	padding: 0 8px;
+	/* border-radius: 3px; */
+	/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.login-submit {
+	/* border: 1px solid #3079ed; */
+	border: 0px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	background-color: #4d90fe;
+	/* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.login-submit:hover {
+	/* border: 1px solid #2f5bb7; */
+	border: 0px;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	background-color: #357ae8;
+	/* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.login-card a {
+	text-decoration: none;
+	color: #666;
+	font-weight: 400;
+	text-align: center;
+	display: inline-block;
+	opacity: 0.6;
+	transition: opacity ease 0.5s;
+}
+
+.login-card a:hover {
+	opacity: 1;
+}
+
+.login-help {
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+}
+
+.main-dialog-class .ui-widget-header {
+	background-color : #4d90fe;
+	font-size: 16px;
+	border: 0;
+	text-transform: uppercase
+}
+
+.main-dialog-class .ui-widget-content {
+	background-image: none;
+	background-color: #fff
+}
+
+.header {
+	background-color: rgba(100, 50, 200, 0.7);
+	height: 100px;
+	width: 100%;
+	font-size: xx-large;azimuth;
+	text-align: center;
+	text-shadow: black;
+	color: black;
+}
+
+.footer {
+	background-color: #F7F7F7;
+	width: 99%;
+	height:60px;
+	font-weight: 100;
+	text-align: center;
+	font-size: 1.3em;
+	margin-top:40%;
+	margin-left: 0.5%;	
+}
+
+#menu {
+	float: left;
+}
+
+#menuuser {
+	float: left;
+	background-color: #F7F7F7;
+	margin-left: 75%;
+	
+}
+
+#menutimer {
+	float: left;
+	margin-left:5%;
+	background-color: #F7F7F7;
+	
+}
