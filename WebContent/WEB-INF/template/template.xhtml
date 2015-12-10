@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title><ui:insert name="title">Default title</ui:insert></title>
+	<h:outputScript library="js" name="jquery.js" />
+	<h:outputScript library="js" name="jquery-ui.js" />
+	<h:outputScript library="js" name="jqcode.js" />
+	<h:outputScript library="js" name="bootstrap.js" />
+	<h:outputScript library="js" name="jquery.canvasjs.min.js" />
+	<h:outputStylesheet library="css" name="jquery-ui.css" />
+	<h:outputStylesheet library="css" name="ui.css" />
+	<h:outputStylesheet library="css" name="dashboard.css" />
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<script type="text/javascript">
+		$(document).ready(
+				function() {
+
+					
+					
+					var coursevalue = '#{coursesBean.selectCourseTitle}';
+					if(!$("#SubCourse").val()=='')$('select[name="MainCourse"]').find(
+							'option:contains(' + $("#SubCourse").val() + ')').attr(
+							"selected", true);
+
+					var coursevalue = '#{coursesBean.selectCourseTitle}';
+					$('select[name="SubCourse"]').find(
+							'option:contains(' + coursevalue + ')').attr(
+							"selected", true);
+
+					var headingvalue = '#{coursesBean.selectHeading}';
+					$('select[name="SubHeading"]').find(
+							'option:contains(' + headingvalue + ')').attr(
+							"selected", true);
+
+					var course="";
+					var userId="";
+					$(document).on('focusout', '#SubCourse', function() {
+						userId="#{coursesBean.course.user.user_id}";
+						course = $("#SubCourse").val();
+					});
+					
+					$(document).on('focusout', '#SubSubHeading', function() {
+						userId="#{coursesBean.course.user.user_id}";
+						course = $("#SubCourse").val();
+					});
+
+					$(document).on('focusin', '#SubHeading', function() {
+						$.ajax({
+							url : "rest/heading/getvalue/" + course+"/"+userId,
+							type : 'GET',
+							dataType : "json",
+							success : function(data) {
+								$('#SubHeading').empty();
+								var json = eval(data);
+								for (var i = json.length - 1; i >= 0; i--) {
+									$('#SubHeading')
+											.append(
+													'<option value="'+json[i]+'">'
+															+ json[i]
+															+ '</option>');
+								}
+							}
+						});
+
+					});
+					
+
+					setInterval(check, 1000);
+					function check() {
+						$.ajax({
+							url : "rest/timer/get",
+							type : 'GET',
+							success : function(data) {
+								$('#timer').text(data);
+							}
+						});
+					}
+				});
+
+		$(function() {
+			//Better to construct options first and then pass it as a parameter
+			var options = {
+				exportEnabled : true,
+				animationEnabled : true,
+				title : {
+					text : "Exporting Chart as Image"
+				},
+				data : [ {
+					type : "splineArea", //change it to line, area, bar, pie, etc
+					dataPoints : [ {
+						y : 10
+					}, {
+						y : 6
+					}, {
+						y : 14
+					}, {
+						y : 12
+					}, {
+						y : 19
+					}, {
+						y : 14
+					}, {
+						y : 26
+					}, {
+						y : 10
+					}, {
+						y : 22
+					} ]
+				} ]
+			};
+
+			$("#report").CanvasJSChart(options);
+
+		});
+	</script>
+	<style>
+.ui-menu {
+	width: 150px;
+}
+
+
+</style>
+</h:head>
+
+<body>
+	<ui:debug hotkey="x"
+		rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}" />
+
+
+	<ui:insert name="header">
+		<ui:include src="/WEB-INF/template/header.xhtml"></ui:include>
+	</ui:insert>
+
+
+	<div id="content" class="col-md-12">
+		<ui:insert name="content">
+
+		</ui:insert>
+	</div>
+	<div class="clearfix"></div>
+
+	<ui:insert name="footer">
+		<ui:include src="/WEB-INF/template/footer.xhtml"></ui:include>
+	</ui:insert>
+
+</body>
+
+</html>

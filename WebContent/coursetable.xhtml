@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<ui:include src="WEB-INF/template/sidemenu.xhtml" />
+		<div id="centermain" class="col-md-11">
+			<div class="titleheadcourse col-md-12">
+				<div class="title">
+					<h3>Courses Detail</h3>
+				</div>
+			</div>
+			<center>
+				<h:form prependId="false">
+					<table id="coursetable">
+						<tr>
+							<th class="begin">REFERENCE NO.</th>
+							<th class="head">TITLE</th>
+							<th class="head">CURRENT STATUS </th>
+							<th colspan="2" class="end">ACTION</th>
+						</tr>
+						<ui:repeat var="cor" value="#{courseTableBean.coursesList}">
+							<tr class="#{cor.course_id}">
+								<td><h:outputText value="#{cor.referenceCode}" /></td>
+								<td><h:outputText value="#{cor.courseName}"></h:outputText></td>
+								<td>#{cor.status.status} &nbsp; <h:commandButton
+										class="active" type="submit" value="Change"
+										action="#{courseTableBean.updateStatus}">
+										<f:param name="courseid" value="#{cor.course_id}" />
+										<f:param name="statusid" value="#{cor.status.status_id}" />
+									</h:commandButton></td>
+								
+								<td><h:commandButton class="detail" type="submit"
+										value="Detail" action="#{courseTableBean.getDetail}">
+										<f:param name="courseid" value="#{cor.course_id}" />
+									</h:commandButton></td>
+							<th><h:commandButton class="delete" type="submit"
+										value="Delete" action="#{courseTableBean.deleteCourse}">
+										<f:param name="courseid" value="#{cor.course_id}" />
+									</h:commandButton></th>
+							</tr>
+						</ui:repeat>
+					</table>
+				</h:form>
+			</center>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

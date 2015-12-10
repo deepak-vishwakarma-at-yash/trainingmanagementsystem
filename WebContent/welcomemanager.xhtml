@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<ui:include src="WEB-INF/template/sidemenu.xhtml" />
+		<div id="centermain" class="col-md-9">
+			<div id="tabmenu" class="col-md-12">
+				<ul>
+					<li><a href="#tabs-1">Dashboard</a></li>
+					<li><a href="#tabs-2">Activity</a></li>
+
+				</ul>
+				<div id="tabs-1">
+					<div>
+						<div class="section" style="margin-right: 20px;">
+							<div class="coursecount">
+								<center>
+									<h:outputText value="#{coursesBean.coursesCount}"
+										class="number" />
+								</center>
+							</div>
+							<div class="numberdetail">
+								Total <br /> Courses
+							</div>
+						</div>
+						<div class="section">
+							<div class="coursecount">
+								<center>
+									<h:outputText value="#{coursesBean.activeCoursesCount}"
+										class="number" />
+								</center>
+							</div>
+							<div class="numberdetail">
+								Active <br /> Courses
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="tabs-2">
+					<div>Activity</div>
+				</div>
+
+			</div>
+			<div class="clearfix"></div>
+			<div id="center" class="col-md-12">
+				<div id="centermainhistory" class="col-md-6">
+					<div class="titlehead col-md-12">
+						History						
+							<h:selectOneMenu id="selecthistory">
+								<f:selectItem itemLabel="----SELECT----" itemValue="sel" />
+								<f:selectItem itemLabel="select one" itemValue="selectone" />
+								<f:selectItem itemLabel="select two" itemValue="selecttwo" />
+								<f:selectItem itemLabel="select three" itemValue="selectthree" />
+							</h:selectOneMenu>
+					</div>
+
+				</div>
+				<div id="centermainassignmentsub" class="col-md-6">
+					<div class="titlehead col-md-12">
+						Assignment Submission
+					</div>
+				</div>
+
+				<div class="clearfix"></div>
+				<div id="report" class="col-md-12"></div>
+			</div>
+
+		</div>
+		<div id="right" class="col-md-2">
+			<div class="titlehead col-md-12">
+				Action
+			</div>
+				<div class="clearfix"></div>
+			<h:form prependId="false">
+				<div class="buttonaction col-md-10">
+					<h:commandButton value="Create a course   >" class="actionbutton"
+						action="courses.xhtml?faces-redirect=true" />
+				</div>
+				<div class="clearfix"></div>
+				
+				<div class="buttonaction col-md-10" >
+					<h:commandButton value="Create a user      >" class="actionbutton" />
+				</div>
+				<div class="clearfix"></div>
+				<div class="buttonaction col-md-10">
+					<h:commandButton value="Create a team     >" class="actionbutton" />
+				</div>
+				<div class="clearfix"></div>
+			</h:form>
+		</div>
+
+	</ui:define>
+</ui:composition></html>

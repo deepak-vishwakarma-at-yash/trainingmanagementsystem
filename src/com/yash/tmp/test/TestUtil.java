@@ -1,25 +1,35 @@
 package com.yash.tmp.test;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
+import javax.annotation.Resource;
 import javax.ejb.EJB;
 import javax.inject.Inject;
+import javax.sql.DataSource;
 
+import com.yash.tmp.dao.DaoService;
+import com.yash.tmp.dao.DaoServiceLocal;
 import com.yash.tmp.log.LoggerProvider;
 import com.yash.tmp.model.User;
+import com.yash.tmp.util.UtilService;
 import com.yash.tmp.util.UtilServiceLocal;
 
 public class TestUtil {
 
-	@EJB
-	UtilServiceLocal utilService ;
+	UtilServiceLocal utilService = new UtilService();
 	
-	@Inject
-	User user ;
+	DaoServiceLocal daoService = new DaoService();
+	
+	User user =new User();
+	
+/*	@Resource(lookup="java:jboss/datasources/testDS")
+	DataSource dataSource;*/
 	
 	public void selectall() throws Exception {
 		String selectall = "SELECT * FROM USER";
-		ResultSet resultSet = utilService.select(selectall);
+		ResultSet resultSet = daoService.select(selectall);
 		while (resultSet.next()) {
 			user.setUser_id(resultSet.getInt("user_id"));
 			user.setFirstname(resultSet.getString("firstname"));
@@ -48,8 +58,8 @@ public class TestUtil {
 	}
 
 	public void selectone() throws Exception {
-		String selectone = "SELECT * FROM USER WHERE USER_ID='1'";
-		ResultSet resultSet = utilService.select(selectone);
+		String selectone = "SELECT * FROM USER WHERE USER_ID=7";
+		ResultSet resultSet = daoService.select(selectone);
 		while (resultSet.next()) {
 			user.setUser_id(resultSet.getInt("user_id"));
 			user.setFirstname(resultSet.getString("firstname"));
@@ -62,26 +72,37 @@ public class TestUtil {
 			user.setUsername(resultSet.getString("username"));
 			user.setPassword(resultSet.getString("password"));
 			
-			LoggerProvider.getLogger().info(user);
+			LoggerProvider.getLogger().info("inisde select"+user);
+			LoggerProvider.getLogger().info("inisde select");
 
 		}
 	}
 
 	public void insert() throws Exception {
 		String insert = "INSERT INTO USER VALUES(2,'kushagra','bhargava','9907617218','kush.bhargava@yash.com',3,0,3,'kush101','kush101')";
-		LoggerProvider.getLogger().info(utilService.update(insert));
+		LoggerProvider.getLogger().info(daoService.update(insert));
 	}
 	
 	public void deleteone() throws Exception {
 		String insert = "DELETE FROM USER WHERE `user_id`=2";
-		LoggerProvider.getLogger().info(utilService.update(insert));
+		LoggerProvider.getLogger().info(daoService.update(insert));
 	}
 
+	public void checkConnectionPool() throws Exception{
+		try {
+			LoggerProvider.getLogger().info("inside connection pool method");
+			LoggerProvider.getLogger().info("inside check method we have Connection object::->"+utilService.getDataSourceConnection());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public static void main(String[] args) throws Exception {
 
 		// LoggerProvider.getLogger().info("check log"); --->:check log working.
 
-		//TestUtil test = new TestUtil();
+		TestUtil test = new TestUtil();
 
 		//test.selectall(); // get all user from db success
 
@@ -89,6 +110,8 @@ public class TestUtil {
 
 		//test.insert(); // insert single entry in db success
 		
-		//test.deleteone(); // delete selected user in db success
+		//test.deleteone(); // delete selected user in db success\
+		
+		test.checkConnectionPool();
 	}
 }

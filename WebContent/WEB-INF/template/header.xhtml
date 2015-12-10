@@ -3,29 +3,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html">
-<div class="login-card-header">
+<div class="login-card-header col-md-12">
 	<h3>
-		<div id="menu">
-			<h:form>
+		<div  class="col-md-8 menu">
+			<h:form prependId="false">
 				<ui:repeat var="menu" value="#{userBean.menulist}">
 					<h:commandLink value="#{menu}" />&nbsp;&nbsp;
 				</ui:repeat>
+			
 			</h:form>
 		</div>
-		<br />
-		<div id="menuuser">
-			<h:outputText value="#{userBean.greeting}" style="color:red;" />
-			&nbsp;
-			<h:outputText value="#{userBean.user.firstname}" style="color:blue;" />
-			<br />
+		<div class="col-md-2">
+			<h:outputText value="#{userBean.greeting}" style="color:red;" />&nbsp;			
+			<h:outputText value="#{userBean.user.firstname}" style="color:blue; " />
 		</div>
-		<div id="menutimer">
-			<h:outputText value="#{userBean.timer}" style="color:green;"
-				id="timer" />
+		<div class="col-md-2">
 			<h:form prependId="false">
-						<h:commandButton action="#{userBean.logout}" value="Logout" class="login login-submit" />
+						<h:outputText value="#{userBean.timer}" style="color:green;" id="timer" />
+						<h:commandButton action="#{userBean.logout}" value="Logout" class="login-submit-logout" />
 			</h:form>
+			
 		</div>
 	</h3>
 </div>
+<div class="clearfix"></div>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<ui:include src="WEB-INF/template/sidemenu.xhtml" />
+		<div id="right" class="col-md-2">
+			<div id="centermain" class="col-md-9"></div>
+			<div class="titlehead col-md-12">Upload Assignment</div>
+
+
+			<h:form enctype="multipart/form-data" prependId="false">
+				<h:inputFile value="#{traineeBean.file}">
+				</h:inputFile>
+
+				<h:commandButton value="Upload File"
+					action="#{traineeBean.uploadFile}"></h:commandButton>
+
+			</h:form>
+			<div class="clearfix"></div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

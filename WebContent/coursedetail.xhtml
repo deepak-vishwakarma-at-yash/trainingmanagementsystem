@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<ui:include src="WEB-INF/template/sidemenu.xhtml" />
+		<div id="centermain" class="col-md-11" style="background-color: rgba(0,0,0,0);">
+			<div class="titleheadcourse col-md-12">
+				<div class="title"><h3> Courses Detail</h3></div>
+			</div>
+			<div id="coursestabmenucontroller col-md-12">
+				<div id="coursestabmenu">
+
+					<ul>
+						<li><a href="#tabs-1">MainHeading</a></li>
+						<li><a href="#tabs-2">SubHeading</a></li>
+
+					</ul>
+					<div id="tabs-1">
+						<div>
+							<center>
+								<h:form prependId="false">
+									<table>
+										<tr>
+											<td>Course title :</td>
+											<td align="left"><h:selectOneMenu id="MainCourse"
+													style="width:100% ; margin-left:0px;"
+													value="#{coursesBean.heading.course.courseName}">
+													<f:selectItem
+														itemLabel="-----------------------------------------------SELECT----------------------------------------------------------"
+														itemValue="" />
+													<f:selectItems value="#{coursesBean.listcourse}" />
+												</h:selectOneMenu></td>
+										</tr>
+										<tr>
+											<td>Heading :</td>
+											<td><h:inputText size="100"
+													value="#{coursesBean.heading.heading}"></h:inputText></td>
+										</tr>
+										<tr>
+											<td colspan="2"><h:commandButton type="submit"
+													value="Save" class="login-submit-logout"
+													style="margin-left:275px;"
+													action="#{coursesBean.addMainCourse}" /> <h:commandButton
+													type="submit" value="Save and Add more"
+													class="login-submit-logout" style="margin-left:80px;"
+													action="#{coursesBean.addMainCourseAndMore}" /> <h:outputLink
+													style="text-decoration: none; margin-left:80px;"
+													value="welcome.xhtml">Cancel</h:outputLink></td>
+										</tr>
+									</table>
+								</h:form>
+							</center>
+						</div>
+					</div>
+					<div id="tabs-2">
+						<div>
+							<center>
+								<h:form prependId="false">
+									<table>
+										<tr>
+											<td>Course title :</td>
+											<td><h:selectOneMenu id="SubCourse"
+													style="width:100% ; margin-left:0px;"
+													value="#{coursesBean.subheading.heading.course.courseName}">
+													<f:selectItem
+														itemLabel="-----------------------------------------------SELECT----------------------------------------------------------"
+														itemValue="" />
+													<f:selectItems value="#{coursesBean.listcourse}" />
+												</h:selectOneMenu></td>
+										</tr>
+										<tr>
+											<td>Heading :</td>
+											<td><h:selectOneMenu id="SubHeading"
+													style="width:100% ; margin-left:0px;"
+													value="#{coursesBean.subheading.heading.heading}">
+													<f:selectItem
+														itemLabel="-----------------------------------------------SELECT----------------------------------------------------------"
+														itemValue="sel" />
+													<f:selectItems value="#{coursesBean.listheading}" />
+												</h:selectOneMenu></td>
+										</tr>
+										<tr>
+											<td>Sub Heading :</td>
+											<td><h:inputText size="100"
+													value="#{coursesBean.subheading.subheading}"
+													id="SubSubHeading"></h:inputText></td>
+										</tr>
+										<tr>
+											<td>Status :</td>
+											<td><h:selectOneMenu
+													value="#{coursesBean.subheading.statusCourse.statuscourse_id}"
+													id="designation">
+													<f:selectItem itemValue="0" itemLabel="NOT STARTED" />
+													<f:selectItem itemValue="1" itemLabel="PENDING" />
+													<f:selectItem itemValue="2" itemLabel="COMPLETED" />
+												</h:selectOneMenu></td>
+										</tr>
+										<tr>
+											<td colspan="2"><h:commandButton type="submit"
+													value="Save" class="login-submit-logout"
+													style="margin-left:275px;"
+													action="#{coursesBean.addSubCourse}" /> <h:commandButton
+													type="submit" value="Save and Add more"
+													class="login-submit-logout" style="margin-left:80px;"
+													action="#{coursesBean.addSubCourseAndMore}" /> <h:outputLink
+													style="text-decoration: none; margin-left:80px;"
+													value="welcome.xhtml">Cancel</h:outputLink></td>
+										</tr>
+
+									</table>
+								</h:form>
+							</center>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div id="report" style="display: none;"></div>
+		</div>
+		<div id="spacing"></div>
+
+	</ui:define>
+</ui:composition>
+</html>

@@ -14,33 +14,34 @@
 	<h:outputStylesheet library="css" name="ui.css" />
 	<script type="text/javascript">
 		$(document).ready(function() {
-			setInterval(check,1000);
-			function check(){
+			setInterval(check, 1000);
+			function check() {
 				$.ajax({
-				      url:"rest/timer/get",
-				      type:'GET',
-				      success:function(data) {
-				         $('#timer').text(data);
-				      }
-				   });
+					url : "rest/timer/get",
+					type : 'GET',
+					success : function(data) {
+						$('#timer').text(data);
+					}
+				});
 			}
 		});
 	</script>
 </h:head>
 <h:body>
-	<!-- <div class="login-card">
+	<center>
+	<div class="login-card" style="color: blue;">
 		<h3>
-			<center> <h:outputText value="#{userBean.message}"
-				style="color:red;" /> <br />
-			<h:outputText value="#{userBean.greeting}" style="color:red;" />
-			&nbsp; <h:outputText value="#{userBean.user.firstname}"
-				style="color:blue;" /> <br />
+			<center>
+			<h3>TRAINING MANAGEMENT SYSTEM</h3>
 			</center>
 		</h3>
-	</div> -->
+	</div>
+	</center>
+	<center>
 	<div class="login-card">
 		<h1>Log-in</h1>
-		<br />
+		<h:outputText value="#{userBean.message}" style="color:red;" />
+		<br /> <br />
 		<h:form prependId="false">
 			<center>
 			<table>
@@ -59,6 +60,7 @@
 						<td><h:inputText type="text" id="password"
 								value="#{userBean.password}" required="true"></h:inputText></td>
 						<td><span id="password"></span></td>
+
 					</tr>
 				</div>
 				<tr>
@@ -78,6 +80,7 @@
 			</center>
 		</h:form>
 	</div>
+	</center>
 	<div id="registerform" style="display: none;" class="login-card">
 		<h:form prependId="false">
 			<center>

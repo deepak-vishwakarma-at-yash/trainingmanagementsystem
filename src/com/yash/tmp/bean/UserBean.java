@@ -2,8 +2,6 @@ package com.yash.tmp.bean;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -11,18 +9,20 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
+
+import com.yash.tmp.log.LoggerProvider;
 import com.yash.tmp.model.User;
+import com.yash.tmp.service.UserService;
 import com.yash.tmp.service.UserServiceLocal;
 
 @ManagedBean
 @SessionScoped
 public class UserBean {
 
-	// @Inject
 	User user = new User();
 
-	@EJB
-	UserServiceLocal userService;
+	UserServiceLocal userService = new UserService();
 
 	private String message;
 
@@ -36,10 +36,32 @@ public class UserBean {
 
 	private String password;
 
+	private String dashurl;
+
+	private String courseurl;
+
+
+	private static Logger LOGGER = Logger.getLogger(UserBean.class.getName());
+	
 	private List<String> menulist ;
 	private List<String> userlist = new ArrayList<>();
 	private List<String> adminlist = new ArrayList<>();
 	private List<String> guestlist = new ArrayList<>();
+	public String getCourseurl() {
+		return courseurl;
+	}
+	
+	public void setCourseurl(String courseurl) {
+		this.courseurl = courseurl;
+	}
+	public String getDashurl() {
+		return dashurl;
+	}
+
+	public void setDashurl(String dashurl) {
+		this.dashurl = dashurl;
+	}
+
 
 	public List<String> getMenulist() {
 		return menulist;
@@ -96,6 +118,7 @@ public class UserBean {
 	}
 
 	public String getMessage() {
+		
 		return message;
 	}
 
@@ -117,6 +140,8 @@ public class UserBean {
 			this.message = userService.authenticateUser(this.username, this.password);
 			if (this.message.equalsIgnoreCase("Valid User")) {
 				this.user = userService.getUser(this.username, this.password);
+				HttpSession session = (HttpSession)FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+				session.setAttribute("user", this.user);
 				if (this.user.getRole().getRole().equalsIgnoreCase("ADMIN")) {
 					this.menulist = this.adminlist;
 				}else
@@ -127,18 +152,20 @@ public class UserBean {
 					this.menulist = this.guestlist;
 				}
 				this.greeting = "Welcome";
-				return "welcome.xhtml?faces-redirect=true";
+				if(this.user.getDesignation().getDesignation().equalsIgnoreCase("MANAGER"))
+				{	this.dashurl="welcomemanager.xhtml"; this.courseurl="coursetable.xhtml";
+				return "welcomemanager.xhtml?faces-redirect=true";
+				}
+				else if(this.user.getDesignation().getDesignation().equalsIgnoreCase("TRAINER")){ this.dashurl="welcometrianer.xhtml"; this.courseurl=""; return "welcometrianer.xhtml?faces-redirect=true";}
+ else {
+					this.dashurl="welcometrainee.xhtml"; this.courseurl=""; return "welcometrainee.xhtml?faces-redirect=true";}
 			} else {
-				HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext()
-						.getSession(false);
-				session.invalidate();
-				this.greeting = null;
-				return "index.xhtml?faces-redirect=true";
+				this.message = userService.authenticateUser(this.username, this.password);
+				return null;
 			}
 		} else {
-			this.greeting = null;
 			this.message = "Please Enter All Value";
-			return "index.xhtml?faces-redirect=true";
+			return null;
 		}
 	}
 

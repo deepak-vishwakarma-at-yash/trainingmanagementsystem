@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<ui:include src="WEB-INF/template/sidemenu.xhtml" />
+		<div id="centermain" class="col-md-9">
+			<div class="titleheadcourse col-md-12">
+				<div class="title">
+					<h3>Courses</h3>
+				</div>
+			</div>
+			<center>
+				<br></br> <br></br>
+				<table>
+					<h:form class="title" enctype="multipart/form-data">
+						<tr>
+							<td>Course title :</td>
+							<td><h:inputText value="#{coursesBean.course.courseName}"
+									size="100"></h:inputText></td>
+						</tr>
+						<tr>
+							<td>Description :</td>
+							<td><h:inputTextarea
+									value="#{coursesBean.course.description}" rows="10" cols="97"></h:inputTextarea>
+							</td>
+						</tr>
+						<tr>
+							<td>Reference code :</td>
+							<td><h:inputText value="#{coursesBean.course.referenceCode}"
+									size="100"></h:inputText></td>
+						</tr>
+						<tr>
+							<td>Active</td>
+							<td><h:selectBooleanCheckbox
+									value="#{coursesBean.checkstatus}"></h:selectBooleanCheckbox></td>
+						</tr>
+						
+						<tr>
+							<td colspan="2"><h:commandButton type="submit" value="Save"
+									action="#{coursesBean.saveCourse}" class="login-submit-logout"></h:commandButton></td>
+						</tr>
+					</h:form>
+				</table>
+			</center>
+		</div>
+		<div id="right" class="col-md-2">
+			<div class="titlehead col-md-12">Notification</div>
+			<div class="clearfix"></div>
+			<h:form>
+				<div id="button1" class="col-md-2">
+					<h:commandButton value="Add headings>" class="actionbutton"
+						action="coursedetail.xhtml" />
+				</div>
+			</h:form>
+		</div>
+		<div class="clearfix"></div>
+	</ui:define>
+</ui:composition>
+</html>

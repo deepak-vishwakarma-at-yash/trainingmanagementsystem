@@ -4,19 +4,22 @@ import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.yash.tmp.dao.DaoService;
+import com.yash.tmp.dao.DaoServiceLocal;
 import com.yash.tmp.util.UtilService;
 import com.yash.tmp.util.UtilServiceLocal;
 
 public class HelperService {
 	
 	private static UtilServiceLocal utilService = new UtilService();
+	private static DaoServiceLocal daoService = new DaoService();
 
 	public static Map< Integer, String> getDesignation() {
 		String query ="SELECT * FROM DESIGNATION";
 		Map<Integer, String> designations= new HashMap<>();
 		ResultSet resultSet;
 		try {
-			resultSet = utilService.select(query);
+			resultSet = daoService.select(query);
 		
 		while(resultSet.next()){
 			designations.put(resultSet.getInt("designation_id"), resultSet.getString("designation"));
@@ -32,7 +35,7 @@ public class HelperService {
 		Map<Integer, String> roles= new HashMap<>();
 		ResultSet resultSet;
 		try {
-			resultSet = utilService.select(query);
+			resultSet = daoService.select(query);
 		
 		while(resultSet.next()){
 			roles.put(resultSet.getInt("role_id"), resultSet.getString("role"));
@@ -48,7 +51,7 @@ public class HelperService {
 		Map<Integer, String> status= new HashMap<>();
 		ResultSet resultSet;
 		try {
-			resultSet = utilService.select(query);
+			resultSet = daoService.select(query);
 		
 		while(resultSet.next()){
 			status.put(resultSet.getInt("status_id"), resultSet.getString("status"));

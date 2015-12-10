@@ -6,6 +6,8 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
 import com.yash.tmp.bean.UserBean;
+import com.yash.tmp.dao.DaoService;
+import com.yash.tmp.dao.DaoServiceLocal;
 import com.yash.tmp.model.User;
 import com.yash.tmp.util.UtilService;
 import com.yash.tmp.util.UtilServiceLocal;
@@ -14,10 +16,8 @@ import com.yash.tmp.util.UtilServiceLocal;
 @LocalBean
 public class UserService implements UserServiceLocal {
 
-	// @EJB
 	private UtilServiceLocal utilService = new UtilService();
-
-	// @ManagedProperty("#{userBean}")
+	private DaoServiceLocal daoService = new DaoService();
 	private UserBean userbean = new UserBean();
 
 	User user = new User();
@@ -28,13 +28,14 @@ public class UserService implements UserServiceLocal {
 	@Override
 	public String authenticateUser(String username, String password) throws Exception {
 		String query = "SELECT * FROM USER WHERE `username`='" + username + "' AND PASSWORD='" + password + "'";
-		ResultSet resultSet = utilService.select(query);
+		ResultSet resultSet = daoService.select(query);
 		if (resultSet.next()) {
 			user.setUser_id(resultSet.getInt("user_id"));
 			user.setFirstname(resultSet.getString("firstname"));
 			user.setLastname(resultSet.getString("lastname"));
 			user.setContact(resultSet.getString("contact"));
 			user.setEmail(resultSet.getString("email"));
+			user.getDesignation().setDesignation_id(resultSet.getInt("designation"));
 			user.getDesignation().setDesignation(resultSet.getInt("designation"));
 			user.getStatus().setStatus(resultSet.getInt("status"));
 			user.getRole().setRole(resultSet.getInt("role"));
@@ -44,8 +45,8 @@ public class UserService implements UserServiceLocal {
 		} else {
 			String checkusername = "SELECT username FROM USER WHERE `username`='" + username + "' ";
 			String checkpassword = "SELECT password FROM USER WHERE `password`='" + password + "' ";
-			ResultSet userset = utilService.select(checkusername);
-			ResultSet passwordset = utilService.select(checkpassword);
+			ResultSet userset = daoService.select(checkusername);
+			ResultSet passwordset = daoService.select(checkpassword);
 			if (userset.next())
 				return "invalid password";
 			if (passwordset.next())
@@ -61,13 +62,13 @@ public class UserService implements UserServiceLocal {
 				+ user.getLastname() + "','" + user.getContact() + "','" + user.getEmail() + "',"
 				+ user.getDesignation().getDesignation_id() + ",0,3,'" + user.getUsername() + "','" + user.getPassword()
 				+ "')";
-		return utilService.update(query);
+		return daoService.update(query);
 	}
 
 	@Override
 	public User getUser(String username, String password) throws Exception {
 		String query = "SELECT * FROM USER WHERE `username`='" + username + "' AND PASSWORD='" + password + "'";
-		ResultSet resultSet = utilService.select(query);
+		ResultSet resultSet = daoService.select(query);
 		if (resultSet.next()) {
 			user.setUser_id(resultSet.getInt("user_id"));
 			user.setFirstname(resultSet.getString("firstname"));
@@ -75,6 +76,7 @@ public class UserService implements UserServiceLocal {
 			user.setContact(resultSet.getString("contact"));
 			user.setEmail(resultSet.getString("email"));
 			user.getDesignation().setDesignation(resultSet.getInt("designation"));
+			user.getDesignation().setDesignation_id(resultSet.getInt("designation"));
 			user.getStatus().setStatus(resultSet.getInt("status"));
 			user.getRole().setRole(resultSet.getInt("role"));
 			user.setUsername(resultSet.getString("username"));

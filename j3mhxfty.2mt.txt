@@ -1,0 +1,91 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: aadyarawat <deepak.vishwakarma@YITRNG06DT.Yash.com>
+#
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   .classpath
+#	modified:   .project
+#	modified:   .settings/org.eclipse.wst.common.component
+#	modified:   .settings/org.eclipse.wst.common.project.facet.core.prefs.xml
+#	modified:   .settings/org.eclipse.wst.common.project.facet.core.xml
+#	modified:   WebContent/WEB-INF/template/footer.xhtml
+#	modified:   WebContent/WEB-INF/template/header.xhtml
+#	new file:   WebContent/WEB-INF/template/sidemenu.xhtml
+#	new file:   WebContent/WEB-INF/template/template.xhtml
+#	modified:   WebContent/WEB-INF/web.xml
+#	new file:   WebContent/coursedetail.xhtml
+#	new file:   WebContent/courses.xhtml
+#	new file:   WebContent/coursetable.xhtml
+#	new file:   WebContent/courseview.xhtml
+#	modified:   WebContent/index.xhtml
+#	new file:   WebContent/resources/css/bootstrap.css
+#	new file:   WebContent/resources/css/dashboard.css
+#	modified:   WebContent/resources/css/ui.css
+#	new file:   WebContent/resources/js/bootstrap.js
+#	modified:   WebContent/resources/js/jqcode.js
+#	new file:   WebContent/resources/js/jquery.canvasjs.min.js
+#	new file:   WebContent/resources/upload/Enquiry Management System.pdf
+#	new file:   WebContent/resources/upload/JSF Assignments.pdf
+#	new file:   WebContent/resources/upload/PLM -Core Java.pdf
+#	new file:   WebContent/welcomemanager.xhtml
+#	new file:   WebContent/welcometrainee.xhtml
+#	new file:   WebContent/welcometrianer.xhtml
+#	modified:   logging.log
+#	modified:   pom.xml
+#	new file:   src/com/yash/tmp/bean/CourseTableBean.java
+#	new file:   src/com/yash/tmp/bean/CoursesBean.java
+#	new file:   src/com/yash/tmp/bean/TraineeBean.java
+#	new file:   src/com/yash/tmp/bean/TrainerBean.java
+#	modified:   src/com/yash/tmp/bean/UserBean.java
+#	new file:   src/com/yash/tmp/dao/DaoService.java
+#	new file:   src/com/yash/tmp/dao/DaoServiceLocal.java
+#	modified:   src/com/yash/tmp/log/LoggerProvider.java
+#	new file:   src/com/yash/tmp/model/Courses.java
+#	new file:   src/com/yash/tmp/model/Heading.java
+#	new file:   src/com/yash/tmp/model/StatusCourse.java
+#	new file:   src/com/yash/tmp/model/Subheading.java
+#	modified:   src/com/yash/tmp/model/User.java
+#	new file:   src/com/yash/tmp/resource/CourseHelper.java
+#	new file:   src/com/yash/tmp/resource/HeadingCall.java
+#	new file:   src/com/yash/tmp/service/CoursesService.java
+#	new file:   src/com/yash/tmp/service/CoursesServiceLocal.java
+#	modified:   src/com/yash/tmp/service/HelperService.java
+#	new file:   src/com/yash/tmp/service/TrainerService.java
+#	new file:   src/com/yash/tmp/service/TrainerServiceLocal.java
+#	modified:   src/com/yash/tmp/service/UserService.java
+#	modified:   src/com/yash/tmp/test/TestUtil.java
+#	modified:   src/com/yash/tmp/util/UtilService.java
+#	modified:   src/com/yash/tmp/util/UtilServiceLocal.java
+#	new file:   target/classes/com/yash/tmp/bean/CourseTableBean.class
+#	new file:   target/classes/com/yash/tmp/bean/CoursesBean.class
+#	new file:   target/classes/com/yash/tmp/bean/TraineeBean.class
+#	new file:   target/classes/com/yash/tmp/bean/TrainerBean.class
+#	modified:   target/classes/com/yash/tmp/bean/UserBean.class
+#	new file:   target/classes/com/yash/tmp/dao/DaoService.class
+#	new file:   target/classes/com/yash/tmp/dao/DaoServiceLocal.class
+#	modified:   target/classes/com/yash/tmp/log/LoggerProvider.class
+#	new file:   target/classes/com/yash/tmp/model/Courses.class
+#	new file:   target/classes/com/yash/tmp/model/Heading.class
+#	new file:   target/classes/com/yash/tmp/model/StatusCourse.class
+#	new file:   target/classes/com/yash/tmp/model/Subheading.class
+#	modified:   target/classes/com/yash/tmp/model/User.class
+#	new file:   target/classes/com/yash/tmp/resource/CourseHelper.class
+#	new file:   target/classes/com/yash/tmp/resource/HeadingCall.class
+#	new file:   target/classes/com/yash/tmp/service/CoursesService.class
+#	new file:   target/classes/com/yash/tmp/service/CoursesServiceLocal.class
+#	modified:   target/classes/com/yash/tmp/service/HelperService.class
+#	new file:   target/classes/com/yash/tmp/service/TrainerService.class
+#	new file:   target/classes/com/yash/tmp/service/TrainerServiceLocal.class
+#	modified:   target/classes/com/yash/tmp/service/UserService.class
+#	modified:   target/classes/com/yash/tmp/test/TestUtil.class
+#	modified:   target/classes/com/yash/tmp/util/UtilService.class
+#	modified:   target/classes/com/yash/tmp/util/UtilServiceLocal.class
+#	modified:   target/m2e-wtp/web-resources/META-INF/maven/tmp/tmp/pom.properties
+#	modified:   target/m2e-wtp/web-resources/META-INF/maven/tmp/tmp/pom.xml
+#
+

@@ -16,11 +16,8 @@ public class User implements Serializable {
 	private String lastname;
 	private String contact;
 	private String email;
-	//@Inject
 	private Designation designation = new Designation();
-	//@Inject
 	private Status status = new Status();
-	//@Inject
 	private Role role = new Role();
 	private String username;
 	private String password;

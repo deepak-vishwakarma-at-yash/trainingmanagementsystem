@@ -1,7 +1,32 @@
 $(document)
 		.ready(
 				function() {
+					
+					var heading="";
+					$(document).on('focusout', '#HeadingDetail', function() {
+						heading = $("#HeadingDetail").val();
+					});
 
+					$(document).on('focusin', '#SubHeadingDetail', function() {
+						$.ajax({
+							url : "rest/heading/getvalue/" +heading,
+							type : 'GET',
+							dataType : "json",
+							success : function(data) {
+								$('#SubHeadingDetail').empty();
+								var json = eval(data);
+								for (var i = json.length - 1; i >= 0; i--) {
+									$('#SubHeadingDetail')
+											.append(
+													'<option value="'+json[i]+'">'
+															+ json[i]
+															+ '</option>');
+								}
+							}
+						});
+
+					});
+					
 					$(document).on('click', '#register', function() {
 						$("#registerform").dialog({
 							title : 'Register',
@@ -17,11 +42,13 @@ $(document)
 						});
 					});
 
+					
+					
 					$('#username').focusout(function() {
 						if ($('#username').val() == "") {
 							$('#spanuser').text("Enter User Name");
-							if ($('#password').val() == "") 
-							$('#loginsubmit').hide();
+							if ($('#password').val() == "")
+								$('#loginsubmit').hide();
 						} else {
 							$('#spanuser').text("");
 							$('#loginsubmit').show();
@@ -32,7 +59,7 @@ $(document)
 						if ($('#password').val() == "") {
 							$('#spanpassword').text("Enter Password");
 							if ($('#username').val() == "")
-							$('#loginsubmit').hide();
+								$('#loginsubmit').hide();
 						} else {
 							$('#spanpassword').text("");
 							$('#loginsubmit').show();
@@ -170,5 +197,15 @@ $(document)
 										}
 
 									});
+
+					$(function() {
+						$("#tabmenu").tabs({
+							height : 150,
+						});
+					});
+
+					$(function() {
+						$("#coursestabmenu").tabs();
+					});
 
 				});

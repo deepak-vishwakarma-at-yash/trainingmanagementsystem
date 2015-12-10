@@ -1,0 +1,400 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
+
+#sidemenu {
+	float: left;
+}
+
+.sidemenu {
+	margin-left: -40px;
+	height: 200px;
+	float: left;
+	height: 200px;
+}
+
+#centermain {
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.8);
+	float: left;
+	border: 1px solid #939393;
+	margin-left: 15px;
+}
+
+#tabmenu {
+	border-radius: 15px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	background-color: lightgray;
+	margin-left: 0px;
+	height: 250px;
+	float: left;
+	height: 250px;
+}
+
+#coursestabmenu {
+	background-color: lightgrey;
+	width: 1190px;
+	height: 250px;
+	float: right;
+	margin-top: 0px;
+}
+
+#coursestabmenucontroller {
+	margin-top: 10%;
+}
+
+#centermainhistory {
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	border: 1px solid #939393;
+	border-radius: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background-color: rgba(200, 200, 200, 0.8);
+	height: 275px;
+	margin-left:-15px;
+}
+
+#centermainassignmentsub {
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	border: 1px solid #939393;
+	border-radius: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background-color: rgba(200, 200, 200, 0.8);
+	background-color: rgba(200, 200, 200, 0.8);
+	height: 275px;
+	float: right;
+	margin-right: -15px;
+}
+
+#right {
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	border: 1px solid #939393;
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.8);
+	margin-left: 15px;
+	padding-left:-15px;
+	padding-right:-15px;
+	float: left;
+}
+
+#report {
+	border: 1px solid #939393;
+	height: 200px;
+	margin-left: -15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.images {
+	border: 1px solid #939393;
+	border-radius: 5px;
+	height: 50px;
+	width: 50px;
+}
+
+table {
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border: none;
+}
+
+.titlehead {
+	border: 1px solid #939393;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	text-align: left;
+	background-color: #c0c0c0;
+	text-align: left;
+	font-weight: 100;
+	font-size: 1.6em;
+	color: #757575;
+	font-family: fantasy;
+	text-align: left;
+}
+
+#selecthistory {
+	    margin-left: 49%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: 1px solid #939393;
+}
+
+.actionbutton {
+	border-radius: 15px;
+	border: 0px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	background-color: #363636;
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	height: 36px;
+	padding: 0 8px;
+	padding-top: 0px;
+	margin: 10px 0px 0px 10px;
+	width: 150px;
+}
+
+.title {
+	text-align: left;
+	padding-top: 30px;
+	height: 30px;
+	width: 100%;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+}
+
+.titleheaddashboard {
+	border-radius: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	text-align: left;
+	background-color: #c0c0c0;
+	height: 40px;
+	width: 100%;
+}
+
+.titleheadcourse {
+	border: 1px solid #939393;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	text-align: left;
+	background-color: #c0c0c0;
+	height: 100px;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	font-size: 25px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	float: left;
+}
+
+.title {
+	margin-top: 0px;
+	margin-left: 30px;
+}
+
+#spacing {
+	height: 350px;
+	width: 100%;
+}
+
+.title h3 {
+	margin-top: 0%;
+	font-weight: 100;
+	text-align: left;
+	font-size: 2.4em;
+	color: #757575;
+	font-family: fantasy;
+}
+
+.detail {
+	border: 1px solid #6e6e6e;
+	border-radius: 15px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	background-color: #5c787a;
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	height: 36px;
+	padding: 0 8px;
+	padding-top: 0px;
+}
+
+.detail:hover {
+	background-color: #293738;
+}
+
+.active {
+	border: 1px solid #6e6e6e;
+	border-radius: 15px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	background-color: #5c787a;
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	height: 36px;
+	padding: 0 8px;
+	padding-top: 0px;
+}
+
+.active:hover {
+	background-color: #364849;
+}
+
+.delete {
+	border: 1px solid #6e6e6e;
+	border-radius: 15px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	background-color: #b84747;
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	height: 36px;
+	padding: 0 8px;
+	padding-top: 0px;
+}
+
+.delete:hover {
+	background-color: #762e2e;
+}
+
+#coursetable {
+	margin-top: 15%;
+	margin-bottom: 5%;
+	border: 1px solid #6e6e6e;
+	border-radius: 15px;
+}
+
+#coursetable .head {
+	background-color: #808080;
+	margin-top: 5%;
+	border: 1px solid #6e6e6e;
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+}
+
+#coursetable .begin {
+	border-top-left-radius: 10px;
+	background-color: #808080;
+	margin-top: 5%;
+	border: 1px solid #6e6e6e;
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+}
+
+#coursetable .end {
+	border-top-right-radius: 10px;
+	background-color: #808080;
+	margin-top: 5%;
+	border: 1px solid #6e6e6e;
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+}
+
+#coursetable tr td {
+	text-align: left;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+}
+
+table {
+	table-layout: fixed;
+}
+
+.detailviewtb {
+	margin-top: 15%;
+	margin-bottom: 5%;
+	border: 1px solid #6e6e6e;
+	border-radius: 15px;
+	text-align: left;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	line-height: 30px;
+	width: 80%;
+}
+
+.detailviewtb #headingtr {
+	border-radius: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	margin-top: 15%;
+	margin-bottom: 5%;
+	border: 1px solid #6e6e6e;
+	background-color: #727272;
+	text-align: left;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	color: white;
+}
+
+.detailviewtb .subheadingtr {
+	margin-top: 15%;
+	margin-bottom: 5%;
+	border: 1px solid #6e6e6e;
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.section {
+	height: 170px;
+	width: 140px;
+	border-radius: 30px;
+	background-color: #c0c0c0;
+	float: left;
+	text-align: left;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	color: white;
+	border: 1px solid #6e6e6e;
+}
+
+.coursecount {
+	margin-top: 10%;
+	margin-left: 15%;
+	height: 100px;
+	width: 100px;
+	border-radius: 100px;
+	background-color: #808080;
+	border: 1px solid #6e6e6e;
+}
+
+.number {
+	margin-left: 35%;
+	margin-top: 15%;
+	float: left;
+	text-align: center;
+	font-weight: 700;
+	color: white;
+	font-size: 50px;
+	font-family: 'Arial', sans-serif;
+}
+
+.numberdetail {
+	margin-top: 3%;
+	margin-left: 3%;
+	text-align: center;
+	color: white;
+	font-size: 120%;
+	font-family: 'Arial', sans-serif;
+}
+
+#center {
+	margin-top: 15px;
+}
+
+.buttonaction{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.trainer-course{
+	background-color: #808080;
+}
+
+.select-active-course{
+	margin-top: 18px;
+}

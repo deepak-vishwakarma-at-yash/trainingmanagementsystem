@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<ui:include src="WEB-INF/template/sidemenu.xhtml" />
+		<div id="centermain" class="col-md-9">
+			<h:form prependId="false">
+				<div class="trainer-course col-md-12">
+					<div class="col-md-8">
+						<h3>Active Courses:</h3>
+					</div>
+					<div class="col-md-3 select-active-course">
+						<h:selectOneMenu value="#{trainerBean.viewCourseId}">
+							<f:selectItems value="#{trainerBean.activeCourses}" var="course"
+								itemLabel="#{course.courseName}" itemValue="#{course.course_id}" />
+						</h:selectOneMenu>
+					</div>
+					<div class="col-md-1 select-active-course">
+						<h:commandButton type="submit" value="OK"
+							action="#{trainerBean.showDetail}" />
+					</div>
+				</div>
+			</h:form>
+			<div class="clearfix"></div>
+			<div class="col-md-11">
+				<div class="titleheadcourse col-md-12">
+					<div class="title">
+						<h3>
+							Course Name :
+							<h:outputText id="coursename"
+								value="#{trainerBean.courses.courseName}" style="color:black;" />
+						</h3>
+					</div>
+				</div>
+				<center>
+					<table class="detailviewtb">
+						<ui:repeat var="heading" value="#{trainerBean.headings}">
+							<tr id="headingtr">
+								<td colspan="2">Heading : &nbsp;#{heading.heading}</td>
+							</tr>
+							<tr class="subheadingtr">
+								<td>Sub heading</td>
+								<td>Staus</td>
+							</tr>
+
+							<ui:repeat var="subheading" value="#{heading.subheadings}">
+								
+
+									<tr class="subheadingtr">
+										<td>#{subheading.subheading}</td>
+										<td>#{subheading.statusCourse.stauscourse} &nbsp; <h:selectOneMenu
+												value="#{trainerBean.statusCoursesId}" >
+												<f:selectItems value="#{trainerBean.statusCourses}"
+													var="status" itemValue="#{status.statuscourse_id}"
+													itemLabel="#{status.stauscourse}" />
+											</h:selectOneMenu> &nbsp; <h:commandButton value="Change"
+												action="#{trainerBean.updateCourseStatus}">
+												<f:param name="subheadingId"
+													value="#{subheading.subheading_id}" />
+											</h:commandButton>
+										</td>
+									</tr>
+								
+							</ui:repeat>
+						</ui:repeat>
+					</table>
+				</center>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

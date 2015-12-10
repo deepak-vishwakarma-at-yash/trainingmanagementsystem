@@ -49,5 +49,7 @@
 2015-11-07 16:23:49 INFO  LoggerProvider:66 - User [user_id=1, firstname=Ram, lastname=Chomani, contact=9098464641, email=ram.chomani@yash.com, designation=TRAINEE, status=BLOCK, role=GUEST, username=ram101, password=ram101]
 2015-11-07 16:24:06 INFO  LoggerProvider:73 - Success
 2015-11-07 16:24:16 INFO  LoggerProvider:78 - Success
-
-Change -------------------aadya---------------
+2015-11-29 14:40:46 INFO  LoggerProvider:78 - inisde selectUser [user_id=7, firstname=Ram, lastname=Somani, contact=1234234, email=ram.somani@yash.com, designation=TRAINER, status=BLOCK, role=GUEST, username=ram101, password=ram101]
+2015-11-29 14:40:46 INFO  LoggerProvider:79 - inisde select
+2015-11-29 14:46:36 INFO  LoggerProvider:93 - inside connection pool method
+2015-11-29 14:58:46 INFO  LoggerProvider:93 - inside connection pool method

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<ui:include src="WEB-INF/template/sidemenu.xhtml" />
+
+		<div id="centermain" class="col-md-11">
+			<div class="titleheadcourse col-md-12">
+				<div class="title">
+					<h3>
+						Course Name :
+						<h:outputText id="coursename"
+							value="#{courseTableBean.coursesDetail.courseName}"
+							style="color:black;" />
+						&nbsp;Status :
+						<h:outputText id="status"
+							value="#{courseTableBean.coursesDetail.status.status}"
+							style="color:#c72929;" />
+					</h3>
+				</div>
+			</div>
+			<center>
+
+				<table class="detailviewtb">
+					<ui:repeat var="heading"
+						value="#{courseTableBean.headingDetailList}">
+						<tr id="headingtr">
+							<td colspan="2">Heading : &nbsp;#{heading.heading}</td>
+						</tr>
+
+						<tr class="subheadingtr">
+							<td>Sub heading</td>
+							<td>Staus</td>
+						</tr>
+
+						<ui:repeat var="subheading" value="#{heading.subheadings}">
+
+							<tr class="subheadingtr">
+								<td>#{subheading.subheading}</td>
+								<td>#{subheading.statusCourse.stauscourse}</td>
+							</tr>
+						</ui:repeat>
+
+
+					</ui:repeat>
+				</table>
+			</center>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
